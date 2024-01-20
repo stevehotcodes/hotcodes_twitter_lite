@@ -12,3 +12,65 @@
 
 }
 
+*{
+    font-family:'Inter';
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--Main-Background-color);
+
+    .body-wrapper{
+        max-width:90rem;
+        min-width:23.475rem ;
+        background-color:var(--Light-background-color);
+        color:white;
+        margin:2% auto;
+
+        .logo-search-wrapper{
+            width:100%;
+            padding:2rem;
+            border:2px solid rgb(34, 33, 33);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap:wrap;
+            
+
+            .logo{
+                // border:2px solid red;
+                flex:1;
+                
+                span{
+                    font-weight:700;
+                    font-size:2.25rem;
+                }
+
+            }
+            .dropdown-user-list{
+                // border: 2px solid red;
+                flex:1;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+               select{
+                    width:15rem;
+                    padding:0.5rem;
+
+                    option{
+                        font-size:1rem;
+                    }
+                    
+               }
+               
+            }
+        }
+    }
+
+
+
+    
+}
+
