@@ -23,7 +23,7 @@ body{
     background-color: var(--Main-Background-color);
 
     .body-wrapper{
-        max-width:90rem;
+        max-width:80rem;
         min-width:23.475rem ;
         background-color:var(--Light-background-color);
         color:white;
@@ -55,6 +55,7 @@ body{
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+
                select{
                     width:15rem;
                     padding:0.5rem;
@@ -67,6 +68,162 @@ body{
                
             }
         }
+
+        .main-background-image{
+            width:100%;
+            height:7rem;
+        }
+        
+        .user-profile-wrapper{
+            width:100%;
+
+            .profile-image{
+                width:150px;
+                height:150px;
+                border-radius:50%;
+                margin-top:-30px;
+            }
+            .fullname{
+                font-size:1.5rem;
+                font-weight:bold
+            }
+            .username{
+                font-weight:600;
+                font-style:italic
+            }
+            a{
+                text-decoration:none;
+                color:white;
+                cursor: pointer;
+            }
+            .icon-location-wrapper{
+                display: flex;
+                align-items:center;
+                .img{
+                    width:30px;
+                    height: 30px;
+                }
+            }
+
+        }
+
+        main{
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:1rem;
+            border: 2px solid white;
+            flex-wrap: wrap;
+
+            .posts-wrapper{
+                flex:1;
+                // background-color:red;
+
+                .post-div{
+                    width:100%;
+                    display:flex;
+                    
+                    .user-profile-pic{
+                        width:20%;
+                        border:2px solid white;
+
+                        img{
+                            width:100%;
+                        }
+
+                    }
+
+                    .post-details{
+                        width:80%;
+                        .post-actions{
+                            width:100%;
+                            display: flex;
+                            gap:7px;
+                            .post-action{
+                                display: flex;
+                                gap:2px;
+
+                                img{
+                                    width:20px;
+                                    height:20px;
+                                }
+
+                                p{
+                                    color:gray;
+                                    font-size: 0.9rem;
+                                    
+                                }
+                            }
+
+                            
+                            
+
+                        }
+                    }
+                    
+                }
+
+
+
+            }
+            .comments-wrapper{
+                flex:1;
+                background-color: blue;
+                display: flex;
+                flex-direction: column;
+                .post-div{
+                    // width:100%;
+                    display:flex;
+                    
+                    .user-profile-pic{
+                        width:20%;
+                        border:2px solid white;
+
+                        img{
+                            width:100%;
+                        }
+
+                    }
+
+                    .post-details{
+                        width:80%;
+                        .post-actions{
+                            width:100%;
+                            display: flex;
+                            gap:7px;
+                            .post-action{
+                                display: flex;
+                                gap:2px;
+
+                                img{
+                                    width:20px;
+                                    height:20px;
+                                }
+
+                                p{
+                                    color:gray;
+                                    font-size: 0.9rem;
+                                    
+                                }
+                            }
+
+                            
+                            
+
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+
+
+    
+
+
+
     }
 
 
