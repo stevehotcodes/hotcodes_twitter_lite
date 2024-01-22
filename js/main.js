@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', async ()=>{
     //fetching data from the API 
     // alert("js is working")
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
                 //adding the dynamic change on the dom
 
-                userSelect_el.addEventListener('change',(e)=>{
+                userSelect_el.addEventListener('change',async(e)=>{
                     e.preventDefault()
                     //read the user id
                     const selectedUserId = userSelect_el.value;
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                     document.querySelector(".username").textContent=selectedUser.username
                     document.querySelector(".website").textContent=selectedUser.website
                     document.querySelector(".about").textContent=selectedUser.company.catchPhrase
+                    document.querySelector(".location").textContent=selectedUser.address.city
 
 
                     //loading the posts of the selected user
@@ -38,10 +39,13 @@ document.addEventListener('DOMContentLoaded',()=>{
                 
                      fetch(`https://jsonplaceholder.typicode.com/posts?userId=${selectedUserId}`)
                      .then(res=>res.json())
-                     .then(posts=>{
+                     .then( async (posts)=>{
                        
                         const postsWrapper_el=document.querySelector(".posts-wrapper");
-                        
+                        // const userName_el=document.querySelector(".username")
+                        const user= await fetchUserDetails(selectedUserId)
+                        console.log("user details:",user);
+
                         console.log(postsWrapper_el)
                         posts.forEach(post=>{ console.log(posts)
                                 
@@ -149,6 +153,17 @@ document.addEventListener('DOMContentLoaded',()=>{
                 })
             })
         })
+
+
+
+       async function fetchUserDetails(id){
+          
+          let response =await  fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+          const data = await response.json();
+            return data
+            
+      }
+     
 
   
 
